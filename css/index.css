@@ -1,0 +1,333 @@
+body {
+    background: #F5F5F5;
+}
+/*640 和设计稿的大小有关系 */
+/*psd图   640px大小的设计稿  750px大小的设计稿*/
+/*
+    640px宽度是早期标准      标准参考设备  Iphone4  完美显示
+    750px宽度是现在主流标准   标准参考设备  Iphone6  完美显示
+*/
+.container {
+    width: 100%;
+    min-width: 320px;
+    max-width: 640px;
+    margin: 0 auto;
+}
+/*搜索部分*/
+.jd_header {
+    width: 100%;
+    /*这里不需要再设置一次最大最小宽度、高度，也不需要加透明边框*/
+    position: fixed;/*fixed是根据浏览器而言的*/
+    z-index: 999;/*提到最前面显示*/
+    left: 0;
+    top: 0;
+    padding: 0;
+}
+.jd_content {
+    position: relative;
+    width: 100%;
+    /*给盒子内容设置宽高，外盒子自己撑开*/
+    height: 40px;
+    min-width: 320px;
+    max-width: 640px;
+    margin: 0 auto;
+    /* background: rgba(216,80,92,0); */    
+    /*border: 1px solid white;!*没有边框这个部分会下移*!*/
+}
+.jd_content a {
+    position: absolute;
+    top: 0;
+}
+.jd_content .icon_logo{
+    position: absolute;
+    /*发现图标过小可以设置更大点的宽高占位*/
+    width: 60px;
+    height: 36px;
+    /*这里不要设置行高让它居中，用top值调整*/
+    top: 4px;
+    left: 5px;
+    background-position: 0 -104px;
+}
+.jd_content .jd_login{
+    position: absolute;
+    width: 50px;
+    line-height: 40px;
+    text-align: center;
+    right: 5px;
+    color: #fff;
+}
+/*搜索框*/
+/*思路：form和input同宽，搜索图标定位上去，利用padding控制input的文字*/
+.jd_content form {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 50px;
+}
+.jd_content .icon_search{
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    left: 75px;
+    top: 10px;
+    /*精灵图不显示：别忘记图片被缩了一半*/
+    background-position: -59px -109px;
+}
+
+.jd_content form input{
+    width: 100%;
+    height: 30px;
+    border-radius: 15px;
+    margin-top: 5px;
+    padding-left: 30px;
+}
+
+/*轮播图*/
+.jd_banner {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+.now {
+    background: #fff;
+}
+/*图片ul，一行排列，溢出隐藏*/
+.jd_banner ul:first-child {
+    width: 1000%;
+    /* 往右移动一格 */
+    transform: translateX(-10%);
+    /*兼容性设置，when*/
+    -webkit-transform: translateX(-10%);
+}
+.jd_banner ul:first-child li {
+    width: 10%;
+    float: left;
+}
+.jd_banner ul:first-child li a {
+    width: 100%;
+    display: block;
+}
+.jd_banner ul:first-child li a img{
+    width: 100%;
+    display: block;
+}
+.jd_banner ul:last-child{
+    position: absolute;
+    bottom: 8px;
+    left: 50%;
+    /*距离左边的距离微调可以用margin*/
+    margin-left: -59px;
+    width: 128px;
+}
+.jd_banner ul:last-child li {
+    width: 6px;
+    height: 6px;
+    border-radius: 6px;
+    border: 1px solid #fff;
+    float: left;
+    margin-right: 10px;
+}
+/*导航栏*/
+.nav {
+    width: 100%;
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+}
+.nav ul {
+    width: 100%;
+    padding: 10px 0;
+    /*子元素浮动，父元素盒子没有被撑开,给父元素设置inline-block*/
+    display: inline-block;
+}
+.nav ul li {
+    width: 25%;
+    float: left;
+}
+.nav ul li a {
+    width: 100%;
+    display: block;
+}
+.nav ul li a img {
+    /*img是要设置具体宽高的*/
+    width: 40px;
+    height: 40px;
+    display: block;
+    margin: 0 auto;
+}
+.nav ul li a p {
+    font-size: 12px;
+    color: #666;
+    padding: 5px 0;
+    text-align: center;
+}
+/*商品区域*/
+.jd_product {
+    width: 100%;
+    height: 240px;
+    background: #ffff;
+    margin-top: 10px;
+    border: 1px solid #e4e4e4;
+}
+  /*商品盒子*/
+.sk .pro-title{
+		height: 34px;
+		line-height: 34px;
+}
+.sk .pro-title .icon_clock{
+		width: 16px;
+		height: 20px;
+		float: left;
+		margin-top: 7px;
+		margin-left: 10px;
+		/*一倍左右*/
+		background: url("../images/seckill-icon.png") no-repeat;
+		background-size: 16px 20px;
+}
+.sk .pro-title .sk_text {
+		color: #d8505c;
+		margin-left: 10px;
+		float: left;
+}
+
+.sk .pro-title .clock {
+    float: left;
+		margin-left: 10px;
+}
+
+.clock span {
+		width: 16px;
+		height: 16px;
+		text-align: center;
+		line-height: 16px;
+		color: #fff;
+		background: #333;
+		margin-left: 3px;
+		float: left;
+		margin-top: 7px;
+}
+
+.sk_header a {
+    float: right;
+    margin-right: 10px;
+}
+	/* 内容 */
+.sk .pro_con {
+    width: 100%;
+    margin-top: 13px;
+}
+.sk .sk_product {
+		width:100%;
+		display: inline-block;	
+}
+.sk_product li{
+    width: 33.33333%;
+    float: left;
+}
+
+.sk_product li a{
+    width: 100%;
+    display: block;
+    border-right: 1px solid #ddd;
+}
+
+.sk_product li:last-child a{
+    border-right: none;
+}
+.sk_product li a img{
+    width: 64%;
+    margin: 0 auto;
+    display: block;
+}
+
+.sk_product li p{
+    font-size: 12px;
+    text-align: center;
+    padding: 5px 0;
+}
+.sk_product li .now_price{
+    color: #d8505c;
+}
+.sk_product li .old_price{
+    color: #666;
+    text-decoration: line-through;
+}
+
+
+/*具体分区*/
+.jd_self {
+    width: 100%;
+    border: 1px solid #dddddd;
+    margin-top: 10px;
+    background-color: #ffffff;  
+    overflow: hidden;
+}
+.jd_self contr2{
+    background-color: #ff8513;
+}
+.jd_self .title {
+    width: 100%;
+    position: relative;
+    border-bottom: 1px solid #dddddd;
+}
+.jd_self .title p{
+		font-size: 16px;
+		margin-left: 20px;
+		padding: 3px 0;
+
+}
+.jd_self .title span{
+    /* 定位+宽高 */
+    display: inline-block;
+    position: absolute;
+    left: 10px;
+    top: 8px;
+    width: 3px;
+    height: 12px;
+    background-color: #d8505c;
+}
+
+
+.contr {
+		width: 100%;
+        
+}
+
+.contr a {
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* 组合样式 */
+.w_50 {
+		width: 50%;
+		display: block;
+}
+.h_50 {
+    height: 30%;
+}
+
+.w_p50 img{
+    width: 100%;
+}
+.b_left {
+		border-left: 1px solid #ddd;
+}
+.b_top {
+    border-top:1px solid #ddd;
+}
+.b_right {
+		border-right:1px solid #ddd;	
+}
+.b_bottom {
+		border-bottom: 1px solid #ddd;
+}
+.w_50 img {
+	width: 100%;
+}
+.mt_10 {
+    margin-top: -13px;
+}
+/* 两个a之间有间隙 */
+/* 图片大小不够填充高度 */
+
